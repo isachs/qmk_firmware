@@ -5,47 +5,47 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Photoshop tools layer
  *
- *       ,----------------------------------------------------------------------------------------.
- *       |  LR actions    | Clone stamp define    | Clone stamp           | Spot healing brush    |
- *       |----------------+-----------------------+-----------------------+-----------------------|
- *       |  PS actions    | Undo         	      | Brush size down       | Brush size up         |
- *       `----------------+-----------------------+-----------------------+-----------------------'
+ *       ,-----------------------+-----------------------+-----------------------+-----------------------.
+ *       |  PS actions           | Redo                  | Clone stamp           | Spot healing brush    |
+ *       |-----------------------+-----------------------+-----------------------+-----------------------|
+ *       |  PS zoom/color        | Undo         	     | Brush size down       | Brush size up         |
+ *       `-----------------------+-----------------------+-----------------------+-----------------------'
  */
-  [0] = LAYOUT_faunch(	MO(2),  	KC_LALT,  		KC_S,  			KC_J,
-						MO(1), 		LCTL(KC_Z), 	KC_LBRACKET,  	KC_RBRACKET),
+  [0] = LAYOUT_faunch(	MO(2),  	LCTL(LSFT(KC_Z)),  		KC_S,  					KC_J,
+						MO(1), 		LCTL(KC_Z), 			KC_LBRACKET,  			KC_RBRACKET),
 						
-/* Keymap 1: Photoshop actions layer
+/* Keymap 1: Photoshop zoom/color layer		
  *
- *       ,----------------------------------------------------------------------------------------.
- *       |  Media control | Ruler/eyedropper      | Rotate arbitrary      | Zoom to 100%          |
- *       |----------------+-----------------------+-----------------------+-----------------------|
- *       |                | Open curves           | Zoom out              | Zoom in               |
- *       `----------------+-----------------------+-----------------------+-----------------------'
+ *       ,-----------------------+-----------------------------------------------------------------------.
+ *       |  Media control        | Open HSL              | Zoom to fit           | Zoom to 100%          |
+ *       |-----------------------+-----------------------+-----------------------+-----------------------|
+ *       |                       | Open curves           | Zoom out              | Zoom in               |
+ *       `-----------------------+-----------------------+-----------------------+-----------------------'
  */
-  [1] = LAYOUT_faunch(	MO(3),  	LSFT(KC_I),  	LCTL(KC_R),  	LCTL(KC_1),
-						KC_TRNS, 	LCTL(KC_M),  	LCTL(KC_PMNS),  LCTL(KC_PPLS)),
+  [1] = LAYOUT_faunch(	MO(3),  	LCTL(KC_U),  			LCTL(KC_0),  			LCTL(KC_1),
+						KC_TRNS, 	LCTL(KC_M),  			LCTL(KC_PMNS),  		LCTL(KC_PPLS)),
 						
-/* Keymap 2: Lightroom actions layer
+/* Keymap 2: Photoshop actions layer
  *
- *       ,----------------------------------------------------------------------------------------.
- *       |                | Open in Photoshop     | Spot removal tool     | Rotate                |
- *       |----------------+-----------------------+-----------------------+-----------------------|
- *       |  Media control | Brush overlay         | Adjust down           | Adjust up             |
- *       `----------------+-----------------------+-----------------------+-----------------------'
+ *       ,-----------------------+-----------------------+-----------------------+-----------------------.
+ *       |                       | Ruler/eyedropper      | Selection subtract    | Selection add         |
+ *       |-----------------------+-----------------------+-----------------------+-----------------------|
+ *       |  Media control        | Rotate arbitrary      | Marquee               | Lasso                 |
+ *       `-----------------------+-----------------------+-----------------------+-----------------------'
  */
-  [2] = LAYOUT_faunch(	KC_TRNS,  	LCTL(KC_E),  	KC_Q,  			KC_R,
-						MO(3), 		KC_O,  			KC_DOWN,  		KC_UP),
+  [2] = LAYOUT_faunch(	KC_TRNS,	KC_I,  					KC_LALT,  				KC_LSFT,
+						MO(3), 		LCTL(KC_R),  			KC_M,  					KC_L),
 						
 /* Keymap 3: Media control
  *
- *       ,----------------------------------------------------------------------------------------.
- *       |                | Volume up             | Mute                  | Print screen (window) |
- *       |----------------+-----------------------+-----------------------+-----------------------|
- *       |                | Volume down           | Open calculator       | Open "This PC"        |
- *       `----------------+-----------------------+-----------------------+-----------------------'
+ *       ,-----------------------+-----------------------+-----------------------+-----------------------.
+ *       |                       | Volume up             | Mute                  | Print screen (window) |
+ *       |-----------------------+-----------------------+-----------------------+-----------------------|
+ *       |                       | Volume down           | Open calculator       | Open "This PC"        |
+ *       `-----------------------+-----------------------+-----------------------+-----------------------'
  */
-  [3] = LAYOUT_faunch(	KC_TRNS,  	KC_VOLU,  		KC_MUTE,  		LALT(KC_PSCR),
-						KC_TRNS,	KC_VOLD,  		KC_CALC,		KC_MYCM),
+  [3] = LAYOUT_faunch(	KC_TRNS,  	KC_VOLU,  				KC_MUTE,  				LALT(KC_PSCR),
+						KC_TRNS,	KC_VOLD,  				KC_CALC,				KC_MYCM),
 };
 
 // Don't fuck with this, thanks.
